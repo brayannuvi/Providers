@@ -1,0 +1,15 @@
+<% @bank_presenter = BankPresenter.new(@bank) %>
+<%= @bank_presenter.error_messages %>
+<%= flash[:notice] %>
+
+<%= form_with model: @bank do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.submit @bank_presenter.new_or_edit %>
+    <%= link_to t('links.go_to_banks'), banks_path %>
+  </div>
+<% end %>

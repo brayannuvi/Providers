@@ -1,0 +1,11 @@
+<table>
+<th><%= t("activerecord.attributes.bank.name") %></th>
+<th> <%= link_to t('links.go_to_new_bank'), new_bank_path %></th>
+<% @banks.each do |bank| %>
+    <tr>
+        <td><%= link_to bank.name, edit_bank_path(bank.id) %><td>
+        <td><%= link_to t("links.destroy"), bank, data: { turbo_method: :delete, turbo_confirm: t("turbo_confirm.confirm_delete") } %><td>
+    </tr>
+<% end %>
+</table>
+<%= will_paginate @libros %>
