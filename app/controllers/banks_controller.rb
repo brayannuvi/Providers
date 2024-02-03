@@ -12,7 +12,7 @@ class BanksController < ApplicationController
     end
 
     def create
-        @bank = Bank.create(bank_params)
+        @bank = Bank.new(bank_params)
 
         if @bank.save
             flash[:notice] = "#{@bank.name}#{t('activerecord.attributes.bank.create.success_message')}"

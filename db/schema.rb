@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_01_224919) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_03_132750) do
   create_table "accounts", force: :cascade do |t|
-    t.integer "user_id", null: false
     t.integer "bank_id", null: false
     t.string "bank_account_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "supplier_id"
     t.index ["bank_id"], name: "index_accounts_on_bank_id"
-    t.index ["user_id"], name: "index_accounts_on_user_id"
+    t.index ["supplier_id"], name: "index_accounts_on_supplier_id"
   end
 
   create_table "banks", force: :cascade do |t|
@@ -49,5 +49,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_01_224919) do
   end
 
   add_foreign_key "accounts", "banks"
-  add_foreign_key "accounts", "users"
+  add_foreign_key "accounts", "suppliers"
 end

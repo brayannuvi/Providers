@@ -1,4 +1,7 @@
 es:
+  button:
+    create: 'Crear'
+    update: 'Actualizar'
   links:
     go_to_banks: 'Ver bancos'
     go_to_new_bank: 'Crear banco'
@@ -9,12 +12,23 @@ es:
     attributes:
       bank:
         name: 'Nombre'
-        create_bank: 'Crear banco'
-        update_bank: 'Actualizar banco'
         create:
           success_message: ' se registró correctamente'
         update:
           success_message: ' se actualizó correctamente'
+      supplier:
+        name: 'Nombre'
+        contact_person_name: 'Nombre de la persona de contacto'
+        contact_person_number: 'Número de celular de la persona de contacto'
+        btn_create_supplier: 'Crear proveedor'
+        btn_update_supplier: 'Actualizar proveedor'
+        create:
+          success_message: ' se registró correctamente'
+        update:
+          success_message: ' se actualizó correctamente'
+      account:
+        bank_account_number: 'Número de cuenta bancaria'
+        bank_id: 'Nombre del banco'
     errors:
       models:
         bank:
@@ -22,3 +36,18 @@ es:
             name:
               blank: 'no puede estar en blanco'
               too_long: 'no puede tener mas de 50 caracteres'
+        supplier:
+          attributes:
+            name:
+              blank: 'no puede estar en blanco'
+            nit:
+              invalid: 'debe tener el formato correcto. Ej: 901362343-4'
+              too_long: 'no puede tener mas de 50 caracteres'
+            contact_person_name:
+              blank: 'no puede estar en blanco'
+            contact_person_number:
+              too_long: 'no puede tener mas de 10 caracteres'
+        account:
+          attributes:
+            bank_account_number:
+              too_long: 'no puede tener mas de 15 caracteres'

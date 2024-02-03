@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   # root "posts#index"
   
   resources :banks
+  resources :suppliers
 end
