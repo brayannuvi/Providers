@@ -9,6 +9,9 @@ es:
   turbo_confirm:
     confirm_delete: '¿Estás seguro de que deseas eliminar este elemento?'
   activerecord:
+    models:
+      suppliers: 'Proveedores'
+      banks: 'Bancos'
     attributes:
       bank:
         name: 'Nombre del banco'
