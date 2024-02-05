@@ -11,7 +11,7 @@ es:
   activerecord:
     attributes:
       bank:
-        name: 'Nombre'
+        name: 'Nombre del banco'
         create:
           success_message: ' se registró correctamente'
         update:
@@ -27,6 +27,9 @@ es:
         update:
           success_message: ' se actualizó correctamente'
       account:
+        bank_account_number: 'Número de cuenta bancaria'
+        bank_id: 'Nombre del banco'
+      accounts:
         bank_account_number: 'Número de cuenta bancaria'
         bank_id: 'Nombre del banco'
     errors:
@@ -51,3 +54,5 @@ es:
           attributes:
             bank_account_number:
               too_long: 'no puede tener mas de 15 caracteres'
+            bank_id:
+              blank: 'no puede estar en blanco'

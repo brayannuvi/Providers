@@ -1,6 +1,6 @@
 class SuppliersController < ApplicationController
     def index
-        @suppliers = Supplier.paginate(page: params[:page], per_page: 10)
+        @suppliers = Supplier.empty_fields_checked.joins(:accounts).merge(Account.empty_fields_checked).order(id: :asc).paginate(page: params[:page], per_page: 10)
     end
     
     def show
@@ -44,10 +44,32 @@ class SuppliersController < ApplicationController
         redirect_to suppliers_path, status: :see_other
     end
 
+    def delete_account
+        @supplier = Supplier.find(params[:id])
+        @account = @supplier.accounts.find(params[:account_id])
+
+        if @account.destroy
+            redirect_to supplier_path, notice: 'Edición eliminada correctamente.'
+        else
+            redirect_to supplier_path, alert: 'Error al eliminar la edición.'
+        end
+    end
+
+    def update_account
+        @supplier = Supplier.find(params[:id])
+        @account = @supplier.accounts.find(params[:account_id])
+
+        if @account.update(supplier_params)
+            redirect_to supplier_path, notice: 'Edición eliminada correctamente.'
+        else
+            redirect_to supplier_path, alert: 'Error al eliminar la edición.'
+        end
+    end
+
     private
 
     def supplier_params
-        params.require(:supplier).permit(:name, :nit, :contact_person_name, :contact_person_number, accounts_attributes: [:bank_account_number, :_destroy, :bank_id])
+        params.require(:supplier).permit(:name, :nit, :contact_person_name, :contact_person_number, accounts_attributes: [:id, :bank_account_number, :_destroy, :bank_id])
     end
 
 end

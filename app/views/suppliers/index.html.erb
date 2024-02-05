@@ -1,0 +1,18 @@
+<table>
+    <th><%= t("activerecord.attributes.supplier.name") %></th>
+    <th><%= t("activerecord.attributes.supplier.contact_person_name") %></th>
+    <th><%= t("activerecord.attributes.supplier.contact_person_number") %></th>
+    <th><%= t("activerecord.attributes.bank.name") %></th>
+    <th><%= t("activerecord.attributes.account.bank_account_number") %></th>
+<% @suppliers.each do |supplier| %>
+    <tr>
+        <td><%= link_to supplier.supplier_name, edit_supplier_path(supplier.id)%></td>
+        <td><%= supplier.contact_person_name%></td>
+        <td><%= supplier.contact_person_number%></td>
+        <td><%= supplier.bank_name%></td>
+        <td><%= supplier.bank_account_number%></td>
+        <td><%= link_to t("links.destroy"), supplier, data: { turbo_method: :delete, turbo_confirm: t("turbo_confirm.confirm_delete") } %></td>
+    </tr>
+<% end %>
+<table>
+<%= will_paginate @supplier %>

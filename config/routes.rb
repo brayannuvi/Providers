@@ -10,5 +10,11 @@ Rails.application.routes.draw do
   # root "posts#index"
   
   resources :banks
-  resources :suppliers
+  resources :suppliers do
+    member do
+      delete 'delete_account/:account_id', to: 'suppliers#delete_account', as: 'delete_account'
+      get 'edit_account/:account_id', to: 'suppliers#edit_account', as: 'edit_account'
+      patch 'update_account/:account_id', to: 'suppliers#update_account', as: 'update_account'
+    end
+  end
 end
