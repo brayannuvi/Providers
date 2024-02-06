@@ -1,9 +1,25 @@
-<table>
+<header class=' p-3'>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+        <div class="navbar-nav">
+            <%= link_to t('headers.dashboard'), pages_dashboard_path, class: 'nav-link' %>
+            <%= link_to t('activerecord.models.banks'), banks_path, class: 'nav-link' %>
+        </div>
+    
+        <h2><%= t('activerecord.models.suppliers') %></h2>
+    
+        <%= button_to 'logout', destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+        </div>
+    </nav>
+</header>
+<div class="container-fluid">
+<table class='table'>
     <th><%= t("activerecord.attributes.supplier.name") %></th>
     <th><%= t("activerecord.attributes.supplier.contact_person_name") %></th>
     <th><%= t("activerecord.attributes.supplier.contact_person_number") %></th>
     <th><%= t("activerecord.attributes.bank.name") %></th>
     <th><%= t("activerecord.attributes.account.bank_account_number") %></th>
+    <th><%= link_to t('links.go_to_new_supplier'), new_supplier_path, class: 'btn btn-primary' %></th>
 <% @suppliers.each do |supplier| %>
     <tr>
         <td><%= link_to supplier.supplier_name, edit_supplier_path(supplier.id)%></td>
@@ -14,5 +30,6 @@
         <td><%= link_to t("links.destroy"), supplier, data: { turbo_method: :delete, turbo_confirm: t("turbo_confirm.confirm_delete") } %></td>
     </tr>
 <% end %>
-<table>
+</table>
 <%= will_paginate @supplier %>
+</div>

@@ -10,6 +10,7 @@ class SuppliersController < ApplicationController
     def new
         @supplier = Supplier.new
         @supplier.accounts.build
+        @header = t('headers.new')
     end
 
     def create
@@ -25,6 +26,7 @@ class SuppliersController < ApplicationController
 
     def edit
         @supplier = Supplier.find(params[:id])
+        @header = t('headers.edit')
     end
 
     def update

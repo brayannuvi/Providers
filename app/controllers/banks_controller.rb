@@ -9,6 +9,7 @@ class BanksController < ApplicationController
     
     def new
         @bank = Bank.new
+        @header = t('headers.new')
     end
 
     def create
@@ -24,6 +25,7 @@ class BanksController < ApplicationController
 
     def edit
         @bank = Bank.find(params[:id])
+        @header = t('headers.edit')
     end
 
     def update

@@ -71,3 +71,12 @@ gem 'devise', '~> 4.9', '>= 4.9.3'
 
 # pagination
 gem 'will_paginate', '~> 4.0'
+
+#Bootstrap
+gem 'bootstrap', '~> 5.3', '>= 5.3.2'
+
+#Sassc
+gem 'sassc-rails', '~> 2.1', '>= 2.1.2'
+
+#Jquery solutions
+gem 'jquery-rails'

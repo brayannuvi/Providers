@@ -1,9 +1,19 @@
 es:
+  headers:
+    log_in: 'Inicio de sesión'
+    sign_up: 'Registro'
+    dashboard: 'Dashboard'
+    new: 'Nuevo'
+    edit: 'Editar'
   devise:
+    sessions:
+      user:
+        signed_in: 'Iniciada sesión correctamente.'
     failure:
       user:
-        invalid: "Email o contraseña incorrecta"
-        unauthenticated: 'Debes iniciar sesión o registrarte antes de continuar'
+        invalid: "Email o contraseña incorrecta."
+        unauthenticated: 'Debes iniciar sesión o registrarte antes de continuar.'
+        not_found_in_database: 'Email o contraseña incorrecta.'
   button:
     create: 'Crear'
     update: 'Actualizar'
@@ -12,9 +22,11 @@ es:
   links:
     go_to_banks: 'Ver bancos'
     go_to_new_bank: 'Crear banco'
+    go_to_suppliers: 'Ver proveedores'
+    go_to_new_supplier: 'Crear proveedor'
     destroy: 'Eliminar'
     log_in: 'Acceder'
-    sign_up: 'Resgitrarse'
+    sign_up: 'Registrarse'
   turbo_confirm:
     confirm_delete: '¿Estás seguro de que deseas eliminar este elemento?'
   activerecord:
@@ -25,9 +37,9 @@ es:
       bank:
         name: 'Nombre del banco'
         create:
-          success_message: ' se registró correctamente'
+          success_message: ' se registró correctamente.'
         update:
-          success_message: ' se actualizó correctamente'
+          success_message: ' se actualizó correctamente.'
       supplier:
         name: 'Nombre'
         contact_person_name: 'Nombre de la persona de contacto'
@@ -35,9 +47,9 @@ es:
         btn_create_supplier: 'Crear proveedor'
         btn_update_supplier: 'Actualizar proveedor'
         create:
-          success_message: ' se registró correctamente'
+          success_message: ' se registró correctamente.'
         update:
-          success_message: ' se actualizó correctamente'
+          success_message: ' se actualizó correctamente.'
       account:
         bank_account_number: 'Número de cuenta bancaria'
         bank_id: 'Nombre del banco'
@@ -52,36 +64,36 @@ es:
         not_saved:
           one: "Error"
           other: "Error"
-        taken: "que intenta seleccionar, ya esta en uso."
+        taken: "que intenta seleccionar ya está en uso."
       models:
         bank:
           attributes:
             name:
-              blank: 'no puede estar en blanco'
-              too_long: 'no puede tener mas de 50 caracteres'
+              blank: 'no puede estar en blanco.'
+              too_long: 'no puede tener más de 50 caracteres.'
         supplier:
           attributes:
             name:
-              blank: 'no puede estar en blanco'
+              blank: 'no puede estar en blanco.'
             nit:
-              invalid: 'debe tener el formato correcto. Ej: 901362343-4'
-              too_long: 'no puede tener mas de 50 caracteres'
+              invalid: 'debe tener el formato correcto. Ej: 901362343-4.'
+              too_long: 'no puede tener más de 50 caracteres.'
             contact_person_name:
-              blank: 'no puede estar en blanco'
+              blank: 'no puede estar en blanco.'
             contact_person_number:
-              too_long: 'no puede tener mas de 10 caracteres'
+              too_long: 'no puede tener más de 10 caracteres.'
         account:
           attributes:
             bank_account_number:
-              too_long: 'no puede tener mas de 15 caracteres'
+              too_long: 'no puede tener más de 15 caracteres.'
             bank_id:
-              blank: 'no puede estar en blanco'
+              blank: 'no puede estar en blanco.'
         user:
           attributes:
             email:
-              blank: 'no puede estar en blanco'
+              blank: 'no puede estar en blanco.'
             password:
-              blank: 'no puede estar en blanco'
-              too_short: 'no puede tener menos de 6 caracteres'
+              blank: 'no puede estar en blanco.'
+              too_short: 'no puede tener menos de 6 caracteres.'
             password_confirmation:
-              confirmation: 'no coincide con la contraseña'
+              confirmation: 'no coincide con la contraseña.'
