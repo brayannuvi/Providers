@@ -1,24 +1,38 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Providers
 
-Things you may want to cover:
+## Requisitos
 
-* Ruby version
+- Ruby (versión 3.2.2)
+- Rails (versión 7.1.3)
 
-* System dependencies
+## Configuración
 
-* Configuration
+1. Dirígete a la ubicacion donde quieres clonar el proyecto por medio de CMD.
 
-* Database creation
+2. Clona el repositorio:
 
-* Database initialization
+git clone git@github.com:brayannuvi/Providers.git
 
-* How to run the test suite
+3. Dirígete a la carpeta del proyecto que acabas de clonar por medio de CMD.
 
-* Services (job queues, cache servers, search engines, etc.)
+4. Instala las dependencias:
 
-* Deployment instructions
+Ejecuta: bundle install
 
-* ...
+5. Configura la base de datos:
+
+Ejecuta: rails db:migrate
+
+6. Brinda permisos de modificación a la ruta que lleva al proyecto que clonaste.
+
+## Uso
+
+1. Dirígete a la carpeta del proyecto por medio de CMD.
+
+2. Ejecuta: rails server
+
+3. Abre tu navegador y ve a http://localhost:3000.
+
+Para poder crear un proveedor es necesario primero haber creado un banco.

@@ -42,30 +42,14 @@ class SuppliersController < ApplicationController
 
     def destroy
         @supplier = Supplier.find(params[:id])
-        @supplier.destroy
+
+        begin
+            @supplier.destroy
+            flash[:notice] = "#{@supplier.name}#{t('activerecord.attributes.supplier.destroy.success_message')}"
+        rescue ActiveRecord::InvalidForeignKey
+            flash[:notice] = t('errors.delete_supplier');
+        end
         redirect_to suppliers_path, status: :see_other
-    end
-
-    def delete_account
-        @supplier = Supplier.find(params[:id])
-        @account = @supplier.accounts.find(params[:account_id])
-
-        if @account.destroy
-            redirect_to supplier_path, notice: 'Edición eliminada correctamente.'
-        else
-            redirect_to supplier_path, alert: 'Error al eliminar la edición.'
-        end
-    end
-
-    def update_account
-        @supplier = Supplier.find(params[:id])
-        @account = @supplier.accounts.find(params[:account_id])
-
-        if @account.update(supplier_params)
-            redirect_to supplier_path, notice: 'Edición eliminada correctamente.'
-        else
-            redirect_to supplier_path, alert: 'Error al eliminar la edición.'
-        end
     end
 
     private

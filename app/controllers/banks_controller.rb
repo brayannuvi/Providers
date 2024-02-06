@@ -41,7 +41,12 @@ class BanksController < ApplicationController
 
     def destroy
         @bank = Bank.find(params[:id])
-        @bank.destroy
+        begin
+            @bank.destroy
+            flash[:notice] = "#{@bank.name}#{t('activerecord.attributes.bank.destroy.success_message')}"
+        rescue ActiveRecord::InvalidForeignKey
+        flash[:notice] = t('errors.invalid_bank_foreign_key')
+        end
         redirect_to banks_path, status: :see_other
     end
 

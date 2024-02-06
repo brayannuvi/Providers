@@ -1,4 +1,7 @@
 es:
+  errors:
+    invalid_bank_foreign_key: 'No se puede eliminar el banco, puesto que actualmente tiene proveedores asociados.'
+    delete_supplier: 'Ocurrió un error al intentar eliminar el proveedor.'
   headers:
     log_in: 'Inicio de sesión'
     sign_up: 'Registro'
@@ -6,6 +9,9 @@ es:
     new: 'Nuevo'
     edit: 'Editar'
   devise:
+    registrations:
+      user:
+        signed_up: '¡Bienvenido! Te has registrado exitosamente.'
     sessions:
       user:
         signed_in: 'Iniciada sesión correctamente.'
@@ -40,6 +46,8 @@ es:
           success_message: ' se registró correctamente.'
         update:
           success_message: ' se actualizó correctamente.'
+        destroy:
+          success_message: ' se eliminó correctamente.'
       supplier:
         name: 'Nombre'
         contact_person_name: 'Nombre de la persona de contacto'
@@ -50,10 +58,13 @@ es:
           success_message: ' se registró correctamente.'
         update:
           success_message: ' se actualizó correctamente.'
+        destroy:
+          success_message: ' se eliminó correctamente.'
       account:
         bank_account_number: 'Número de cuenta bancaria'
         bank_id: 'Nombre del banco'
       accounts:
+        bank: 'Nombre del banco'
         bank_account_number: 'Número de cuenta bancaria'
         bank_id: 'Nombre del banco'
       user:
@@ -88,6 +99,8 @@ es:
               too_long: 'no puede tener más de 15 caracteres.'
             bank_id:
               blank: 'no puede estar en blanco.'
+            bank:
+              required: 'no puede estar en blanco.'
         user:
           attributes:
             email:
