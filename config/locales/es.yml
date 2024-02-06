@@ -19,7 +19,7 @@ es:
       user:
         invalid: "Email o contraseña incorrecta."
         unauthenticated: 'Debes iniciar sesión o registrarte antes de continuar.'
-        not_found_in_database: 'Email o contraseña incorrecta.'
+        not_found_in_database: 'Email no encontrado en la base de datos.'
   button:
     create: 'Crear'
     update: 'Actualizar'
