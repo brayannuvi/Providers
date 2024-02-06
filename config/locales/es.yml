@@ -1,11 +1,20 @@
 es:
+  devise:
+    failure:
+      user:
+        invalid: "Email o contraseña incorrecta"
+        unauthenticated: 'Debes iniciar sesión o registrarte antes de continuar'
   button:
     create: 'Crear'
     update: 'Actualizar'
+    register: 'Registrar'
+    log_in: 'Acceder'
   links:
     go_to_banks: 'Ver bancos'
     go_to_new_bank: 'Crear banco'
     destroy: 'Eliminar'
+    log_in: 'Acceder'
+    sign_up: 'Resgitrarse'
   turbo_confirm:
     confirm_delete: '¿Estás seguro de que deseas eliminar este elemento?'
   activerecord:
@@ -35,7 +44,15 @@ es:
       accounts:
         bank_account_number: 'Número de cuenta bancaria'
         bank_id: 'Nombre del banco'
+      user:
+        password: 'Contraseña'
+        password_confirmation: 'Confirmación de contraseña'
     errors:
+      messages:
+        not_saved:
+          one: "Error"
+          other: "Error"
+        taken: "que intenta seleccionar, ya esta en uso."
       models:
         bank:
           attributes:
@@ -59,3 +76,12 @@ es:
               too_long: 'no puede tener mas de 15 caracteres'
             bank_id:
               blank: 'no puede estar en blanco'
+        user:
+          attributes:
+            email:
+              blank: 'no puede estar en blanco'
+            password:
+              blank: 'no puede estar en blanco'
+              too_short: 'no puede tener menos de 6 caracteres'
+            password_confirmation:
+              confirmation: 'no coincide con la contraseña'
